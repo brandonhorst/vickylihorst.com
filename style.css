@@ -1,0 +1,303 @@
+:root {
+  --content-width: 60rem;
+  --inset-width: 46rem;
+
+  --bg: #f8f4f1;
+  --bg-accent: #c28d74;
+  --bg-accent-2: #c28d74;
+
+  --fg: rgba(0, 0, 0, 0.8);
+  --fg-accent: #6d3116;
+  --fg-secondary: rgba(0, 0, 0, 0.5);
+  --font-family: "Gill Sans", sans-serif;
+  --font-weight: 200;
+  --font-size: 16pt;
+  --line-height: 140%;
+  --letter-spacing: 0.05em;
+
+  --cta-bg: #a34a21;
+  --cta-bg-darker: #823b19;
+  --cta-bg-darkest: #512510;
+  --cta-fg-color: white;
+
+  --hero-font-size: 36pt;
+
+  --heading-font-size: 28pt;
+  --heading-font-weight: 100;
+  --heading-font-family: Baskerville, serif;
+  --heading-line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --hero-font-size: 24pt;
+    --heading-font-size: 24pt;
+    --font-size: 12pt;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  padding: 0;
+  margin: 0;
+}
+
+body,
+a {
+  color: var(--fg);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2 {
+  line-height: var(--heading-line-height);
+}
+
+header h1 {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+header {
+  padding: 1rem 0;
+}
+
+h1 a,
+h2 {
+  color: var(--fg-accent);
+}
+
+header li {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+header,
+footer,
+section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: var(--heading-font-size);
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  margin: 0;
+  padding: 0 0 0.5em 0;
+}
+
+.hero h2 {
+  font-size: var(--hero-font-size);
+}
+
+.accent {
+  background: var(--bg-accent);
+}
+.accent-2 {
+  background: var(--bg-accent-2);
+}
+
+nav {
+  margin: 0 auto;
+  max-width: var(--inset-width);
+}
+
+/* Layout */
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+header .content,
+footer .content {
+  padding: 1rem 2rem;
+}
+
+.content.inset {
+  max-width: var(--inset-width);
+}
+
+.content {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.content.standard {
+  justify-content: center;
+  align-items: center;
+}
+
+.content.hero {
+  flex-direction: column;
+  align-items: start;
+  padding: 6rem 2rem;
+}
+
+.content.with-image {
+  flex-direction: row-reverse;
+}
+
+.content .label {
+  flex: 0 1 20rem;
+  align-self: start;
+}
+
+.content .details {
+  flex: 1 1;
+}
+
+.content.hero .label {
+  text-align: center;
+}
+
+.content.standard .label {
+  text-align: right;
+}
+
+.content.with-image .label,
+.content.contact .label {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  header .content,
+  footer .content {
+    padding: 1rem 1rem;
+  }
+
+  .content.with-image,
+  .content.contact,
+  .content.standard {
+    flex-direction: column;
+  }
+
+  .content .label {
+    flex: 1 1;
+    align-self: start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .content.standard .label,
+  .content.hero .label {
+    text-align: left;
+  }
+
+  .content.details {
+    flex: 1 1;
+  }
+}
+
+/* Other stuff */
+
+.headshot {
+  width: 10rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  text-align: left;
+  margin-bottom: 2em;
+}
+
+.contact-info .lin {
+  font-size: 30px;
+}
+
+.contact-info li {
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+footer .content {
+  text-align: center;
+  color: var(--fg-secondary);
+  font-size: 80%;
+}
+
+.cta,
+button {
+  background-color: var(--cta-bg);
+  color: var(--cta-fg-color);
+  padding: 1em 1.5em;
+  text-decoration: none;
+  border: none;
+  font: inherit;
+  transition: background-color 0.1s ease-out;
+  cursor: pointer;
+}
+
+.cta:hover,
+button:hover {
+  background-color: var(--cta-bg-darker);
+}
+
+.cta:active,
+button:active {
+  background-color: var(--cta-bg-darkest);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  margin-bottom: 1em;
+  padding: 4px;
+}
+
+button {
+  padding: 12px;
+}
