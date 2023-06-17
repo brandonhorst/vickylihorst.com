@@ -56,11 +56,6 @@ a {
   color: var(--fg);
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 2em;
-}
-
 ul {
   padding: 0;
   margin: 0;
@@ -141,11 +136,6 @@ nav ul {
 .content {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 4rem 2rem 2rem;
-}
-
-header .content,
-footer .content {
   padding: 1rem 2rem;
 }
 
@@ -153,11 +143,16 @@ footer .content {
   max-width: var(--inset-width);
 }
 
-.content.standard {
+.content.standard,
+.content.reverse {
   display: flex;
   column-gap: 2rem;
   justify-content: center;
   align-items: center;
+}
+
+.content.reverse {
+  flex-flow: row-reverse;
 }
 
 .content.contact {
@@ -167,24 +162,19 @@ footer .content {
 
 .content.hero {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 6rem 2rem;
-}
-
-.content.with-image {
-  display: flex;
-  column-gap: 2rem;
-  flex-direction: row-reverse;
+  flex-flow: row-reverse;
+  align-items: center;
 }
 
 .content .label {
   flex: 0 1 20rem;
   align-self: start;
+  padding: 2rem 0;
 }
 
 .content .details {
   flex: 1 1;
+  padding: 2rem 0;
 }
 
 .content.hero .label {
@@ -195,7 +185,7 @@ footer .content {
   text-align: right;
 }
 
-.content.with-image .label,
+.content.reverse .label,
 .content.contact .label {
   text-align: left;
 }
@@ -210,7 +200,7 @@ footer .content {
     padding: 1rem 1rem;
   }
 
-  .content.with-image,
+  .content.reverse,
   .content.contact,
   .content.standard {
     flex-direction: column;
@@ -221,15 +211,19 @@ footer .content {
     align-self: start;
     text-align: left;
     width: 100%;
+    padding: 0;
   }
 
-  .content.standard .label,
   .content.hero .label {
+    flex: 0 1 10rem;
+  }
+
+  .content.standard .label {
     text-align: left;
   }
 
-  .content.details {
-    flex: 1 1;
+  .content .details {
+    padding: 0;
   }
 
   nav ul {
@@ -237,10 +231,16 @@ footer .content {
   }
 }
 
-/* Other stuff */
+@media screen and (max-width: 480px) {
+  .content.hero {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+}
 
+/* Other stuff */
 .headshot {
-  width: 10rem;
+  width: 100%;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
@@ -277,6 +277,7 @@ button {
   font: inherit;
   transition: background-color 0.1s ease-out;
   cursor: pointer;
+  display: inline-block;
 }
 
 .cta:hover,
