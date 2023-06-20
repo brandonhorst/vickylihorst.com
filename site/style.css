@@ -262,6 +262,10 @@ p {
     flex-direction: column-reverse;
     gap: 2rem;
   }
+
+  nav ul {
+    gap: 0.5rem;
+  }
 }
 
 /* Other stuff */
@@ -337,4 +341,9 @@ textarea {
 
 button {
   padding: 12px;
+}
+
+.bad-lni {
+  position: relative;
+  top: 2px;
 }
