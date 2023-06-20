@@ -169,6 +169,26 @@ footer {
   align-items: center;
 }
 
+.content.threepack {
+  display: flex;
+  flex-flow: column;
+  column-gap: 2rem;
+}
+
+.content.threepack .details {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.detail {
+  flex: 1 1;
+  background: var(--bg-accent);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
 .content.reverse {
   flex-flow: row-reverse;
 }
@@ -184,7 +204,10 @@ footer {
   align-items: center;
 }
 
-.content .label {
+.content.standard .label,
+.content.reverse .label,
+.content.hero .label,
+.content.contact .label {
   flex: 0 1 20rem;
   align-self: start;
 }
@@ -224,6 +247,7 @@ p {
   .content {
     padding-left: 1rem;
     padding-right: 1rem;
+    margin: 0;
   }
 
   .content.reverse,
@@ -232,7 +256,14 @@ p {
     flex-direction: column;
   }
 
-  .content .label {
+  .content.threepack .details {
+    flex-direction: column;
+  }
+
+  .content.standard .label,
+  .content.reverse .label,
+  .content.hero .label,
+  .content.contact .label {
     flex: 1 1;
     align-self: start;
     text-align: left;
