@@ -29,7 +29,7 @@
   --heading-line-height: 1.4;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 774px) {
   :root {
     --hero-font-size: 24pt;
     --heading2-font-size: 24pt;
@@ -218,6 +218,7 @@ footer {
   display: flex;
   flex-flow: row-reverse;
   align-items: center;
+  gap: 1rem;
 }
 
 .content.solo {
@@ -266,7 +267,7 @@ p {
   gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 774px) {
   section {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -340,7 +341,7 @@ p {
 /* Other stuff */
 .headshot {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 1rem;
   margin-bottom: 1rem;
 }
 
