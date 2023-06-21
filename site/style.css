@@ -220,6 +220,13 @@ footer {
   align-items: center;
 }
 
+.content.solo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
 .content.standard .label,
 .content.reverse .label,
 .content.hero .label,
