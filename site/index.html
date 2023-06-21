@@ -23,16 +23,21 @@
         </li>
         <li><a href="#about-me">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="spacer"></li>
-        <li><a href="mailto:vicky@vickylihorst.com"><i class="lni lni-envelope bad-lni"></i></a>
-        <li><a href="https://www.linkedin.com/in/mengyang-vicky-li-horst/" target="_blank"><i
-              class="lni lni-linkedin"></i></a></li>
+        <li class="spacer" aria-hidden="true"></li>
+        <li><a href="mailto:vicky@vickylihorst.com" aria-label="Contact with Email"><i
+              class="lni lni-envelope bad-lni"></i></a>
+        <li><a href="https://www.linkedin.com/in/mengyang-vicky-li-horst/" aria-label="LinkedIn Profile"
+            target="_blank"><i class="lni lni-linkedin"></i></a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section id="hero" class="">
       <div class="content hero">
+        <div class="details">
+          <h2>Personalized coaching for product managers in biotech, life sciences, and healthcare</h2>
+          <a href="#contact" class="cta">Book a Free Introductory Session</a>
+        </div>
         <div class="label">
           <img srcset="
           ./img/headshotw450.jpg,
@@ -40,10 +45,6 @@
           ./img/headshotw1350.jpg 3x,
           ./img/headshotw1800.jpg 4x
           " class="headshot" alt="Photo of Vicky Li Horst" />
-        </div>
-        <div class="details">
-          <h2>Personalized coaching for product managers in biotech, life sciences, and healthcare</h2>
-          <a href="#contact" class="cta">Book a Free Introductory Session</a>
         </div>
       </div>
     </section>
@@ -141,13 +142,18 @@
           <h2>Contact</h2>
           <div class="contact-info">
             <ul>
-              <li><i class="lni lni-map-marker"></i> Cambridge, Massachusetts</li>
-              <li><i class="lni lni-phone"></i> <a href="tel:+1 617-475-0566">+1 (617) 475-0566</a></li>
-              <li><i class="lni lni-envelope"></i> <a href="mailto:vicky@vickylihorst.com">vicky@vickylihorst.com</a>
+              <li aria-label="Location"><i class="lni lni-map-marker" aria-hidden="true"></i>
+                Cambridge, Massachusetts
               </li>
-              <li>
-                <i class="lni lni-linkedin"></i> <a href="https://www.linkedin.com/in/mengyang-vicky-li-horst/"
-                  target="_blank">Vicky Li
+              <li aria-label="Phone number"><i class=" lni lni-phone" aria-hidden="true"></i> <a
+                  href="tel:+1 617-475-0566">+1 (617)
+                  475-0566</a></li>
+              <li aria-label="Email address"><i class="lni lni-envelope" aria-hidden="true"></i> <a
+                  href="mailto:vicky@vickylihorst.com">vicky@vickylihorst.com</a>
+              </li>
+              <li aria-label="LinkedIn profile">
+                <i class="lni lni-linkedin" aria-hidden="true"></i> <a
+                  href="https://www.linkedin.com/in/mengyang-vicky-li-horst/" target="_blank">Vicky Li
                   Horst</a>
               </li>
             </ul>
@@ -155,12 +161,12 @@
         </div>
         <div class="details">
           <form method="post" action="https://forms.un-static.com/forms/4f72e3c332137afb85ce143ab4481db01a5e04b3">
-            <label for="name">Name</label>
-            <input type="text" name="name" />
-            <label for="email">Email address</label>
-            <input type="text" name="email" />
-            <label for="message">Message</label>
-            <textarea name="message" rows="6"></textarea>
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" />
+            <label for="contact-email">Email address</label>
+            <input type="text" id="contact-email" name="email" />
+            <label for="contact-message">Message</label>
+            <textarea name="message" id="contact-message" rows="6"></textarea>
             <button type="submit">Submit</button>
           </form>
         </div>

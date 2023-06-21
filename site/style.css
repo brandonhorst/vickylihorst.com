@@ -216,7 +216,6 @@ footer {
 
 .content.hero {
   display: flex;
-  flex-flow: row-reverse;
   align-items: center;
   gap: 1rem;
 }
@@ -329,7 +328,7 @@ p {
 
 @media screen and (max-width: 480px) {
   .content.hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 2rem;
   }
 
