@@ -406,3 +406,7 @@ textarea {
   position: relative;
   top: 2px;
 }
+
+form {
+  width: 100%;
+}
