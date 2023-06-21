@@ -22,7 +22,8 @@
 
   --hero-font-size: 36pt;
 
-  --heading-font-size: 28pt;
+  --heading2-font-size: 28pt;
+  --heading3-font-size: 22pt;
   --heading-font-weight: 100;
   --heading-font-family: Baskerville, serif;
   --heading-line-height: 1.4;
@@ -31,7 +32,8 @@
 @media screen and (max-width: 768px) {
   :root {
     --hero-font-size: 24pt;
-    --heading-font-size: 24pt;
+    --heading2-font-size: 24pt;
+    --heading3-font-size: 18pt;
     --font-size: 12pt;
   }
 }
@@ -65,7 +67,6 @@ li {
   list-style-type: none;
 }
 
-h1,
 h2 {
   line-height: var(--heading-line-height);
 }
@@ -89,9 +90,17 @@ header {
   padding: 1rem 0;
 }
 
-h1 a,
-h2 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--fg-accent);
+}
+
+a {
+  color: inherit;
 }
 
 header,
@@ -102,7 +111,14 @@ section {
 }
 
 h2 {
-  font-size: var(--heading-font-size);
+  font-size: var(--heading2-font-size);
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--heading3-font-size);
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
   margin: 0;
@@ -157,7 +173,7 @@ footer {
   padding-right: 2rem;
 }
 
-.content.inset {
+.inset {
   max-width: var(--inset-width);
 }
 
@@ -172,7 +188,7 @@ footer {
 .content.threepack {
   display: flex;
   flex-flow: column;
-  column-gap: 2rem;
+  gap: 2rem;
 }
 
 .content.threepack .details {
@@ -183,10 +199,13 @@ footer {
 
 .detail {
   flex: 1 1;
+  display: flex;
+  flex-flow: column;
   background: var(--bg-accent);
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  gap: 1rem;
 }
 
 .content.reverse {
@@ -202,6 +221,10 @@ footer {
   display: flex;
   flex-flow: row-reverse;
   align-items: center;
+}
+
+.content.solo {
+  align-self: start;
 }
 
 .content.standard .label,
@@ -254,6 +277,10 @@ p {
   .content.contact,
   .content.standard {
     flex-direction: column;
+  }
+
+  .content.threepack {
+    gap: 1rem;
   }
 
   .content.threepack .details {
