@@ -202,7 +202,7 @@ footer {
   display: flex;
   flex-flow: column;
   background: var(--bg-accent);
-  border-radius: 8px;
+  border-radius: 1rem;
   padding: 1rem;
   text-align: center;
   gap: 1rem;
