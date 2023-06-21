@@ -4,7 +4,7 @@
 
   --bg: #f8f4f1;
   --bg-accent: #c28d74;
-  --bg-accent-2: #c28d74;
+  --bg-accent-2: #c28d7433;
 
   --fg: rgba(0, 0, 0, 0.8);
   --fg-accent: #6d3116;
@@ -168,6 +168,7 @@ footer {
 
 .content {
   max-width: var(--content-width);
+  width: calc(100% - 4rem);
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -185,25 +186,20 @@ footer {
   align-items: center;
 }
 
-.content.threepack {
+.threepack {
   display: flex;
-  flex-flow: column;
-  gap: 2rem;
-}
-
-.content.threepack .details {
   flex-direction: row;
   gap: 1rem;
   align-items: stretch;
 }
 
-.detail {
+.pack {
   flex: 1 1;
   display: flex;
   flex-flow: column;
-  background: var(--bg-accent);
+  background: var(--bg-accent-2);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   gap: 1rem;
 }
@@ -221,10 +217,6 @@ footer {
   display: flex;
   flex-flow: row-reverse;
   align-items: center;
-}
-
-.content.solo {
-  align-self: start;
 }
 
 .content.standard .label,
@@ -260,6 +252,12 @@ p {
   text-align: left;
 }
 
+.content.contact .label {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   section {
     padding-top: 1rem;
@@ -271,6 +269,7 @@ p {
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0;
+    width: calc(100% - 2rem);
   }
 
   .content.reverse,
@@ -279,11 +278,11 @@ p {
     flex-direction: column;
   }
 
-  .content.threepack {
+  .content.solo {
     gap: 1rem;
   }
 
-  .content.threepack .details {
+  .threepack {
     flex-direction: column;
   }
 
@@ -308,6 +307,10 @@ p {
   .content .details {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .content.contact .label {
+    gap: 1rem;
   }
 
   nav ul {
@@ -357,9 +360,10 @@ footer .content {
 
 .cta,
 button {
+  border-radius: 1rem;
   background-color: var(--cta-bg);
   color: var(--cta-fg-color);
-  padding: 1em 1.5em;
+  padding: 0.75em 1.5em;
   text-decoration: none;
   border: none;
   font: inherit;
@@ -395,10 +399,6 @@ textarea {
   border: none;
   margin-bottom: 1em;
   padding: 4px;
-}
-
-button {
-  padding: 12px;
 }
 
 .bad-lni {
