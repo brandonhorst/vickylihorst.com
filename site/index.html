@@ -163,8 +163,8 @@
           <form method="post" action="https://forms.un-static.com/forms/4f72e3c332137afb85ce143ab4481db01a5e04b3">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" />
-            <label for="contact-email">Email address</label>
-            <input type="email" id="contact-email" name="email" />
+            <label for="contact-email">Email address <span aria-hidden="true">*</span></label>
+            <input type=" email" id="contact-email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
             <label for="contact-message">Message</label>
             <textarea name="message" id="contact-message" rows="6"></textarea>
             <button type="submit">Submit</button>

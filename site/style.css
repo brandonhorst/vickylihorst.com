@@ -169,7 +169,8 @@ footer {
 
 .content {
   max-width: var(--content-width);
-  width: calc(100% - 4rem);
+  box-sizing: border-box;
+  width: 100%;
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -278,7 +279,6 @@ p {
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0;
-    width: calc(100% - 2rem);
   }
 
   .content.reverse,
@@ -404,7 +404,8 @@ button {
 
 input,
 textarea {
-  width: calc(100% - 8px);
+  box-sizing: border-box;
+  width: 100%;
   border: none;
   margin-bottom: 1em;
   padding: 4px;
