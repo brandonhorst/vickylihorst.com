@@ -404,7 +404,7 @@ button {
 
 input,
 textarea {
-  width: 100%;
+  width: calc(100% - 8px);
   border: none;
   margin-bottom: 1em;
   padding: 4px;
