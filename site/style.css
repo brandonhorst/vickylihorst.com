@@ -9,7 +9,7 @@
   --fg: rgba(0, 0, 0, 0.8);
   --fg-accent: #6d3116;
   --fg-secondary: rgba(0, 0, 0, 0.5);
-  --font-family: "Gill Sans", sans-serif;
+  --font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   --font-weight: 200;
   --font-size: 16pt;
   --line-height: 140%;
@@ -25,7 +25,8 @@
   --heading2-font-size: 28pt;
   --heading3-font-size: 22pt;
   --heading-font-weight: 100;
-  --heading-font-family: Baskerville, serif;
+  --heading-font-family: Baskerville, "Baskerville Old Face", Garamond,
+    "Times New Roman", serif;
   --heading-line-height: 1.4;
 }
 
