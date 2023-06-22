@@ -404,6 +404,7 @@ button {
 
 input,
 textarea {
+  font: inherit;
   box-sizing: border-box;
   width: 100%;
   border: none;
