@@ -5,14 +5,6 @@ const childCount = carousel.children.length;
 
 let offset = 0;
 
-function positiveMod(a, b) {
-  return ((a % b) + b) % b;
-}
-
-function floorMod(a, b) {
-  return a - (a % b);
-}
-
 leftButton.addEventListener("click", function () {
   if (offset <= -1) return;
   offset -= 1;

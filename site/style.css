@@ -362,6 +362,13 @@ p {
     margin: 0;
   }
 
+  .full-width {
+    padding: 0;
+  }
+  #carousel {
+    padding: 0 1rem;
+  }
+
   .content.reverse,
   .content.contact,
   .content.standard {
@@ -401,6 +408,10 @@ p {
 
   .content.contact .label {
     gap: 1rem;
+  }
+
+  .carousel-item {
+    flex-direction: column;
   }
 
   nav ul {
