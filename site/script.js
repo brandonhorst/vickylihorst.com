@@ -1,7 +1,7 @@
-const carousel = document.getElementById("carousel-items");
+const slider = document.getElementById("slider");
 const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
-const childCount = carousel.children.length;
+const childCount = slider.children.length;
 
 let offset = 0;
 
@@ -17,17 +17,13 @@ rightButton.addEventListener("click", function () {
   updateVisibility();
 });
 
-function getChild(i) {
-  return carousel.children[i + 1];
-}
-
 function addToAll(className) {
-  for (let child of carousel.children) {
+  for (let child of slider.children) {
     child.classList.add(className);
   }
 }
 function removeFromAll(className) {
-  for (let child of carousel.children) {
+  for (let child of slider.children) {
     child.classList.remove(className);
   }
 }
@@ -35,28 +31,28 @@ function removeFromAll(className) {
 function updateVisibility() {
   addToAll("hidden");
 
-  const child = getChild(offset);
+  const child = slider.children[offset + 1];
   child.classList.remove("hidden");
-  carousel.style.transform = `translateX(${-(offset + 1) * 100}%)`;
+  slider.style.transform = `translateX(${-(offset + 1) * 100}%)`;
 }
 
-carousel.addEventListener("transitionend", (e) => {
-  if (e.target !== carousel) {
+slider.addEventListener("transitionend", (e) => {
+  if (e.target !== slider) {
     return;
   }
   if (offset <= -1) offset = childCount - 1;
   if (offset >= childCount) offset = 0;
-  carousel.classList.add("notransition");
+  slider.classList.add("notransition");
   addToAll("notransition");
 
   updateVisibility();
 
   // Force render
-  carousel.offsetHeight;
-  carousel.classList.remove("notransition");
+  slider.offsetHeight;
+  slider.classList.remove("notransition");
   removeFromAll("notransition");
 });
 
-carousel.append(carousel.children[0].cloneNode(true));
-carousel.prepend(carousel.children[childCount - 1].cloneNode(true));
+slider.append(slider.children[0].cloneNode(true));
+slider.prepend(slider.children[childCount - 1].cloneNode(true));
 updateVisibility();
