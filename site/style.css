@@ -25,7 +25,7 @@
 
   --heading2-font-size: 28pt;
   --heading3-font-size: 22pt;
-  --heading-font-weight: 100;
+  --heading-font-weight: 400;
   --heading-font-family: Baskerville, "Baskerville Old Face", Garamond,
     "Times New Roman", serif;
   --heading-line-height: 1.4;
@@ -80,12 +80,18 @@ header h1 {
   padding: 0;
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
 header a {
   text-decoration: none;
 }
 
 header a:hover {
   text-decoration: underline;
+  text-decoration-thickness: from-font;
 }
 
 header {
@@ -133,6 +139,7 @@ h3 {
 .accent {
   background: var(--bg-accent);
 }
+
 .accent-2 {
   background: var(--bg-accent-2);
 }
@@ -145,7 +152,12 @@ nav {
 nav ul {
   display: flex;
   gap: 2rem;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+nav li {
+  white-space: nowrap;
 }
 
 .spacer {
@@ -184,6 +196,12 @@ footer {
 .full-width {
   max-width: none;
   padding: 0;
+}
+
+iframe {
+  margin: 0 auto;
+  display: block;
+  border-radius: 20px;
 }
 
 .content.standard,
@@ -343,6 +361,7 @@ p {
 }
 
 @media screen and (max-width: 774px) {
+
   section {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -428,8 +447,11 @@ p {
     flex-wrap: wrap;
   }
 
-  .spacer {
-    flex-grow: 0;
+  nav ul li:first-child {
+    width: 100%;
+    font-size: var(--heading3-font-size);
+    font-weight: var(--heading-font-weight);
+    /* font-family: var(--heading-font-family); */
   }
 }
 
