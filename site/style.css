@@ -3,7 +3,7 @@
   --inset-width: 46rem;
 
   --bg: #f8f4f1;
-  --bg-accent: #c28d74;
+  --bg-accent: #c28d74dd;
   --bg-accent-2: #c28d7433;
 
   --fg: rgba(0, 0, 0, 0.8);
@@ -28,7 +28,7 @@
   --heading-font-weight: 400;
   --heading-font-family: Baskerville, "Baskerville Old Face", Garamond,
     "Times New Roman", serif;
-  --heading-line-height: 1.4;
+  --heading-line-height: 1.1;
 }
 
 @media screen and (max-width: 774px) {
@@ -130,6 +130,10 @@ h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
   margin: 0;
+}
+
+.hero em {
+  font-style: normal;
 }
 
 .hero h2 {
@@ -248,6 +252,7 @@ iframe {
   padding: 0 2rem;
   box-sizing: border-box;
   gap: 1rem;
+  hanging-punctuation: first;
 }
 
 .carousel-button {
@@ -329,11 +334,17 @@ iframe {
   align-self: start;
 }
 
+.content .servicelist li {
+  list-style-type: "❖  ";
+  list-style-position: inside;
+  line-height: 1.5;
+}
+
 .content .details {
   flex: 1 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   align-items: flex-start;
 }
 
@@ -433,6 +444,10 @@ p {
 
   nav ul {
     gap: 1rem;
+  }
+
+  .pack {
+    padding: 1rem;
   }
 }
 
