@@ -118,6 +118,11 @@ section {
   margin: 0 auto;
 }
 
+/* Alternate section backgrounds automatically */
+main > section:nth-of-type(even) {
+  background: var(--bg-accent);
+}
+
 h2 {
   font-size: var(--heading2-font-size);
   font-family: var(--heading-font-family);
