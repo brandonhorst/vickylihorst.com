@@ -75,7 +75,7 @@ h2 {
 
 header h1 {
   font-size: inherit;
-  font-weight: 400;
+  font-weight: inherit;
   margin: 0;
   padding: 0;
 }
@@ -162,6 +162,10 @@ nav ul {
 
 nav li {
   white-space: nowrap;
+}
+
+nav a[aria-current="page"] {
+  font-weight: 400;
 }
 
 .spacer {
@@ -334,8 +338,14 @@ iframe {
   align-self: start;
 }
 
-.content .servicelist li {
+.content ul.servicelist li {
   list-style-type: "❖  ";
+  list-style-position: inside;
+  line-height: 1.5;
+}
+
+.content ol.servicelist li {
+  list-style-type: decimal;
   list-style-position: inside;
   line-height: 1.5;
 }
