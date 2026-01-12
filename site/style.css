@@ -189,19 +189,20 @@ nav ul {
   gap: 2rem;
   overflow-x: hidden;
   text-align: center;
-  justify-content: center;
 }
 
 nav li {
   white-space: nowrap;
 }
 
-nav a[aria-current="page"] {
-  font-weight: 400;
+nav li.logo {
+  flex-grow: 1;
+  text-align: left;
+  font-weight: var(--heading-font-weight);
 }
 
-.spacer {
-  flex-grow: 1;
+nav a[aria-current="page"] {
+  font-weight: 400;
 }
 
 /* Layout */
@@ -407,28 +408,16 @@ iframe {
 }
 
 .content .benefits li {
+  text-align: center;
   list-style: none;
   padding: 0.65rem 0.85rem 0.65rem 2rem;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(109, 49, 22, 0.08);
+  background: var(--bg-accent-2);
   border-radius: 0.75rem;
   position: relative;
   line-height: 1.35;
-  font-weight: 400;
-  color: var(--fg-bold);
 }
 
-.content .benefits li::before {
-  content: "•";
-  position: absolute;
-  left: 0.75rem;
-  top: 0.65rem;
-  color: var(--fg-accent);
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-.content.persona-stack {
+.content.callout-stack {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -598,12 +587,14 @@ p {
   nav ul {
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  nav ul li:first-child {
+  nav ul li.logo {
     width: 100%;
     font-size: var(--heading3-font-size);
     font-weight: var(--heading-font-weight);
+    text-align: center;
     /* font-family: var(--heading-font-family); */
   }
 }
