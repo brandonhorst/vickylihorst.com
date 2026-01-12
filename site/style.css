@@ -26,8 +26,8 @@
   --heading2-font-size: 28pt;
   --heading3-font-size: 22pt;
   --heading-font-weight: 400;
-  --heading-font-family: Baskerville, "Baskerville Old Face", Garamond,
-    "Times New Roman", serif;
+  --heading-font-family:
+    Baskerville, "Baskerville Old Face", Garamond, "Times New Roman", serif;
   --heading-line-height: 1.1;
 }
 
@@ -128,7 +128,7 @@ main {
 }
 
 /* Alternate section backgrounds automatically */
-main>section:nth-of-type(even) {
+main > section:nth-of-type(even) {
   background: var(--bg-accent);
 }
 
@@ -490,7 +490,6 @@ p {
 }
 
 @media screen and (max-width: 774px) {
-
   section {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -568,7 +567,6 @@ p {
   .content.hero .details {
     padding-top: 0.5rem;
   }
-
 
   .content.standard .label {
     text-align: left;
