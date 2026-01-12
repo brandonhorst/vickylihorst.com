@@ -146,12 +146,29 @@ h3 {
   margin: 0;
 }
 
+.single-line {
+  font-size: calc(var(--heading2-font-size) * 0.85);
+  white-space: nowrap;
+}
+
 .hero em {
   font-style: normal;
 }
 
 .hero h2 {
   font-size: var(--hero-font-size);
+}
+
+.content.hero .hero-title {
+  font-size: calc(var(--hero-font-size) * 0.8);
+  white-space: nowrap;
+}
+
+.content.hero .tagline {
+  font-weight: 400;
+  font-size: 1.1em;
+  color: var(--fg-bold);
+  letter-spacing: 0.02em;
 }
 
 .accent {
@@ -381,6 +398,74 @@ iframe {
   align-items: flex-start;
 }
 
+.content .benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.content .benefits li {
+  list-style: none;
+  padding: 0.65rem 0.85rem 0.65rem 2rem;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(109, 49, 22, 0.08);
+  border-radius: 0.75rem;
+  position: relative;
+  line-height: 1.35;
+  font-weight: 400;
+  color: var(--fg-bold);
+}
+
+.content .benefits li::before {
+  content: "•";
+  position: absolute;
+  left: 0.75rem;
+  top: 0.65rem;
+  color: var(--fg-accent);
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.content.persona-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content .persona-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(109, 49, 22, 0.08);
+  border-radius: 1rem;
+}
+
+.content .persona-row h3 {
+  margin: 0;
+}
+
+.content .persona-row .persona-label p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75em;
+  color: var(--fg-secondary);
+}
+
+.content .persona-row .persona-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.content .persona-row .servicelist {
+  padding-inline-start: 1.1rem;
+}
+
 p {
   margin: 0;
 }
@@ -416,6 +501,28 @@ p {
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0;
+  }
+
+  .single-line {
+    font-size: var(--heading2-font-size);
+    white-space: normal;
+  }
+
+  .content .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .content .persona-row {
+    grid-template-columns: 1fr;
+  }
+
+  .content .persona-row .persona-label p {
+    font-size: 0.85em;
+  }
+
+  .content.hero .hero-title {
+    font-size: calc(var(--hero-font-size) * 0.95);
+    white-space: normal;
   }
 
   .full-width {
