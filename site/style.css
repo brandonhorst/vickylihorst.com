@@ -347,6 +347,7 @@ iframe {
 .pack {
   flex: 1 1 0;
   display: flex;
+  align-items: flex-start;
   flex-flow: column;
   background: var(--bg-accent-2);
   border-radius: 1rem;
