@@ -426,7 +426,7 @@ iframe {
 .content .benefits li {
   text-align: center;
   list-style: none;
-  padding: 0.65rem 0.85rem 0.65rem 2rem;
+  padding: 0.5rem 1rem;
   background: var(--bg-accent-2);
   border-radius: 0.75rem;
   position: relative;
@@ -516,10 +516,6 @@ p {
   .single-line {
     font-size: var(--heading2-font-size);
     white-space: normal;
-  }
-
-  .content .benefits {
-    grid-template-columns: 1fr;
   }
 
 
