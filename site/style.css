@@ -307,6 +307,15 @@ iframe {
   background: var(--bg-accent-2);
 }
 
+.testimonial-inline {
+  padding: 0;
+  max-width: var(--inset-width);
+}
+
+.testimonial-inline .attribution {
+  text-align: left;
+}
+
 .carousel-button {
   cursor: pointer;
   background: none;
@@ -604,7 +613,6 @@ p {
   .carousel-item {
     flex-direction: column;
   }
-
   nav ul {
     gap: 1rem;
   }
