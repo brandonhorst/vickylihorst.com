@@ -253,6 +253,114 @@ iframe {
   align-items: center;
 }
 
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.company-logos li {
+  flex: 0 1 88px;
+}
+
+.company-logos img {
+  display: block;
+  width: 100%;
+  height: 64px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
+.company-logos .ontologic-logo {
+  filter: brightness(0);
+}
+
+.logo-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 12.5%, black 87.5%, transparent);
+}
+
+.logo-carousel .company-logos {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0;
+  transform: translateX(-37.5%);
+  transition: transform 0.5s ease-out;
+}
+
+.logo-carousel li {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  transition: opacity 0.5s ease-out;
+}
+
+.logo-carousel img {
+  height: 72px;
+}
+
+.logo-carousel .company-logos.notransition,
+.logo-carousel .company-logos.notransition li {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel .company-logos,
+  .logo-carousel li {
+    transition: none;
+  }
+}
+
+.logo-preview {
+  opacity: 0.35;
+}
+
+.logo-button {
+  flex: 0 0 44px;
+  height: 44px;
+}
+
+.logo-button:focus-visible {
+  outline: 2px solid var(--fg-accent);
+  outline-offset: 4px;
+}
+
+.logo-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+  .logo-carousel .company-logos {
+    transform: translateX(-75%);
+  }
+
+  .logo-carousel li {
+    flex-basis: 50%;
+    padding: 0.5rem;
+  }
+
+  .logo-viewport {
+    mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+  }
+}
+
 .carousel {
   align-items: center;
   display: flex;
@@ -317,6 +425,8 @@ iframe {
 }
 
 .carousel-button {
+  min-width: 44px;
+  min-height: 44px;
   cursor: pointer;
   background: none;
   border: none;
@@ -467,6 +577,64 @@ iframe {
   background: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(109, 49, 22, 0.08);
   border-radius: 1rem;
+}
+
+.fractional-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fractional-intro p {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-wrap: pretty;
+}
+
+.scenario-rows ol {
+  margin: 0;
+  padding: 0;
+}
+
+.scenario-rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  gap: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(109, 49, 22, 0.22);
+}
+
+.scenario-rows li:last-child {
+  border-bottom: 1px solid rgba(109, 49, 22, 0.22);
+}
+
+.scenario-rows h3 {
+  max-width: 15rem;
+  line-height: 1.2;
+  color: var(--fg-accent);
+}
+
+.scenario-rows p {
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.fractional-contact {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+@media screen and (max-width: 774px) {
+  .scenario-rows li {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+  }
+
+  .scenario-rows h3 {
+    max-width: none;
+  }
 }
 
 .content .persona-row {
@@ -649,6 +817,22 @@ p {
     justify-content: center;
   }
 
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  nav ul {
+    row-gap: 0.25rem;
+  }
+
+  input:not([type="hidden"]):not([type="checkbox"]),
+  textarea {
+    min-height: 44px;
+    padding: 0.625rem;
+  }
+
   nav ul li.logo {
     width: 100%;
     font-size: var(--heading3-font-size);
@@ -709,6 +893,12 @@ footer .content {
 
 .cta:hover {
   background-color: var(--cta-bg-darker);
+}
+
+#work-together .cta {
+  margin-top: auto;
+  padding-inline: 0.75em;
+  white-space: nowrap;
 }
 
 .cta:active {
