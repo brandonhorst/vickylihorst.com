@@ -794,6 +794,10 @@ p {
     padding-bottom: 1rem;
   }
 
+  .content .details .servicelist {
+    padding-inline-start: 1.5rem;
+  }
+
   .content.contact .label {
     gap: 1rem;
   }
