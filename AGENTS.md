@@ -44,6 +44,7 @@
   - Summary of changes and rationale.
   - Screenshots or before/after GIFs for visible changes.
   - Paths touched (e.g., `site/style.css:1`, `site/index.html:42`).
+- Do not push to `main`.
 
 ## Security & Configuration Tips
 
