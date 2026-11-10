@@ -8,7 +8,7 @@
     const carousel = document.createElement("div");
     carousel.className = "content logo-carousel";
     carousel.setAttribute("role", "region");
-    carousel.setAttribute("aria-label", "Companies I’ve worked with");
+    carousel.setAttribute("aria-label", "Experience across organizations");
     carousel.setAttribute("aria-roledescription", "carousel");
     const viewport = document.createElement("div");
     viewport.className = "logo-viewport";
