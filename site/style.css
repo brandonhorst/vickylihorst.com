@@ -292,15 +292,17 @@ iframe {
 }
 
 .logo-carousel .company-logos {
+  --logo-slot: 25%;
+  --logo-peek: 12.5%;
   flex-wrap: nowrap;
   justify-content: flex-start;
   gap: 0;
-  transform: translateX(-37.5%);
+  transform: translateX(calc(var(--logo-peek) - var(--logo-index, 2) * var(--logo-slot)));
   transition: transform 0.5s ease-out;
 }
 
 .logo-carousel li {
-  flex: 0 0 25%;
+  flex: 0 0 var(--logo-slot);
   box-sizing: border-box;
   padding: 0.75rem 1rem;
   transition: opacity 0.5s ease-out;
@@ -347,17 +349,40 @@ iframe {
 }
 
 @media screen and (max-width: 600px) {
-  .logo-carousel .company-logos {
-    transform: translateX(-75%);
-  }
-
-  .logo-carousel li {
-    flex-basis: 50%;
-    padding: 0.5rem;
+  .logo-carousel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 0.75rem;
+    padding-inline: 1rem;
   }
 
   .logo-viewport {
-    mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+    grid-area: 1 / 1 / 2 / -1;
+    mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .logo-button {
+    grid-area: 2 / 2;
+    justify-self: start;
+  }
+
+  .logo-button:first-child {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  .logo-carousel .company-logos {
+    --logo-slot: 36%;
+    --logo-peek: 14%;
+  }
+
+  .logo-carousel li {
+    padding: 0.5rem;
+  }
+
+  .logo-preview {
+    opacity: 0.55;
   }
 }
 
