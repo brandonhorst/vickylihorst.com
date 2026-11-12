@@ -16,11 +16,12 @@
     status.className = "logo-status";
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
-    let first = 0;
+    const mobileFirst = logos.findIndex((logo) => logo.hasAttribute("data-mobile-first"));
+    let first = mobile.matches ? Math.max(0, mobileFirst) : 0;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     function render() {
-      const count = mobile.matches ? 1 : 3;
+      const count = mobile.matches ? 2 : 3;
       list.replaceChildren();
       // Include both ends so wrapping can settle before resetting the track.
       for (let position = -2; position <= logos.length + count + 1; position += 1) {
@@ -31,8 +32,7 @@
     }
 
     function updateVisibility() {
-      const count = mobile.matches ? 1 : 3;
-      const step = mobile.matches ? 50 : 25;
+      const count = mobile.matches ? 2 : 3;
       const visibleNames = [];
       Array.from(list.children).forEach((item, index) => {
         const position = index - 2;
@@ -44,7 +44,7 @@
           visibleNames.push(item.querySelector("img").alt);
         }
       });
-      list.style.transform = `translateX(${-(first + 1.5) * step}%)`;
+      list.style.setProperty("--logo-index", first + 2);
       status.textContent = visibleNames.join(", ");
     }
 
@@ -62,6 +62,30 @@
       if (first < 0 || first >= logos.length) resetPosition();
     });
 
+    function move(direction) {
+      if (direction < 0 && first <= -1) return;
+      if (direction > 0 && first >= logos.length) return;
+      first += direction;
+      if (reducedMotion.matches) resetPosition();
+      else updateVisibility();
+    }
+
+    let swipeStart;
+    viewport.addEventListener("pointerdown", (event) => {
+      if (!mobile.matches || event.pointerType !== "touch" || !event.isPrimary) return;
+      swipeStart = event;
+    });
+    viewport.addEventListener("pointercancel", (event) => {
+      if (event.pointerId === swipeStart?.pointerId) swipeStart = undefined;
+    });
+    viewport.addEventListener("pointerup", (event) => {
+      if (event.pointerId !== swipeStart?.pointerId) return;
+      const dx = event.clientX - swipeStart.clientX;
+      const dy = event.clientY - swipeStart.clientY;
+      swipeStart = undefined;
+      if (Math.abs(dx) >= 35 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
+    });
+
     function makeButton(label, icon, direction) {
       const button = document.createElement("button");
       button.type = "button";
@@ -71,13 +95,7 @@
       arrow.className = `lni lni-angle-double-${icon}`;
       arrow.setAttribute("aria-hidden", "true");
       button.append(arrow);
-      button.addEventListener("click", () => {
-        if (direction < 0 && first <= -1) return;
-        if (direction > 0 && first >= logos.length) return;
-        first += direction;
-        if (reducedMotion.matches) resetPosition();
-        else updateVisibility();
-      });
+      button.addEventListener("click", () => move(direction));
       return button;
     }
 
